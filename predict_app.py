@@ -66,12 +66,4 @@ def predict():
     return jsonify(response)
 
 
-if __name__ == "__main__":
-    image = Image.open("C:/Users/mjcastaneda4/Pictures/car3.jpg")
-    image = image.resize((32, 32))
-    image = img_to_array(image).reshape(1, 32, 32, 3)
-    with graph.as_default():
-        prediction = model.predict(image)
-    print(prediction)
-    response = {'prediction': str(labels_dict[np.argmax(prediction)])}
-    print(response)
+
